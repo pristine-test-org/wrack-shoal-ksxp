@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading the Sneezewort board</title>
+    <style>
+      :root { font-family: system-ui, sans-serif; color: #1c1c1c; background: #fafaf7; }
+      body { margin: 0; }
+      header, main, footer { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem; }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      .mark { font-weight: 700; color: #3b4bc8; text-decoration: none; }
+      /* Intentional, for Impeccable's test drive: gradient text on the heading. */
+      h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+        background: linear-gradient(90deg, #3b4bc8, #c83bb4);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+      .back { font-size: 10px; color: #3b4bc8; }
+      /* Intentional, for Impeccable's test drive: low-contrast light grey text. */
+      .aside { color: #c8c8c4; }
+      /* Intentional, for Impeccable's test drive: a colour that is not in the stylesheet's palette. */
+      .tag { color: #e8590c; font-weight: 700; }
+      /* Intentional, for Impeccable's test drive: transition on a layout property. */
+      .bar { height: 0.5rem; width: 40%; background: #3b4bc8; border-radius: 0.25rem; transition: width 0.3s; }
+      .bar:hover { width: 100%; }
+      /* Intentional, for Impeccable's test drive: body text flush with the viewport edges, no background. */
+      .edge { margin: 0; padding: 0; max-width: none; line-height: 1.6; }
+      ul { padding-left: 1.2rem; line-height: 1.8; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="mark" href="/">Sneezewort</a>
+      <a class="back" href="/">Back to the board</a>
+    </header>
+    <main>
+      <h1>Reading the Sneezewort board</h1>
+      <p>The board shows everything on the shared list at a glance, newest entries first, so you can tell what is still open in a few seconds.</p>
+      <ul>
+        <li><span class="tag">Open</span> items appear as plain text.</li>
+        <li><span class="tag">Done</span> items start with a tick.</li>
+        <li><span class="tag">Empty</span> lists say so instead of showing a blank page.</li>
+      </ul>
+      <div class="bar" role="presentation"></div>
+      <p class="aside">The board reloads its entries each time you open the page.</p>
+    </main>
+    <p class="edge">Everyone who opens the board sees the same entries, because each page load reads the shared list directly instead of keeping its own copy.</p>
+    <footer>Sneezewort · the board for the shared list</footer>
+  </body>
+</html>
